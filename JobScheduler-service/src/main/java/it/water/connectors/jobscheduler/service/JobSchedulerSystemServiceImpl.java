@@ -97,7 +97,6 @@ public class JobSchedulerSystemServiceImpl extends BaseSystemServiceImpl impleme
             } else
                 getLog().warn("Job {} already exists, it has not been added", jobKey);
         } catch (ParseException | SchedulerException e) {
-            //getLog().error("Could not schedule job {}: {}", jobKey, e.getMessage());
             String errorMessage = String.format("Could not schedule job %s: %s", jobKey, e.getMessage());
             throw new WaterRuntimeException(errorMessage,e);
         }
@@ -118,7 +117,6 @@ public class JobSchedulerSystemServiceImpl extends BaseSystemServiceImpl impleme
             else
                 deleteJobFromScheduler(job);
         } catch (SchedulerException e) {
-            //getLog().error("Job {} has not been removed: {}", jobKey, e.getMessage());
             String errorMessage = String.format("Job %s has not been removed: %s", jobKey, e.getMessage());
             throw new WaterRuntimeException(errorMessage,e);
         }
@@ -145,9 +143,8 @@ public class JobSchedulerSystemServiceImpl extends BaseSystemServiceImpl impleme
             } else
                 getLog().warn("Job does not exist, it has been neither updated nor scheduled");
         } catch (ParseException | SchedulerException e) {
-            //getLog().error("Job {} has not been updated: {}", jobKey, e.getMessage());
             String errorMessage = String.format("Job %s has not been updated: %s", jobKey, e.getMessage());
-            throw new WaterRuntimeException(e);
+            throw new WaterRuntimeException(errorMessage, e);
         }
     }
 
