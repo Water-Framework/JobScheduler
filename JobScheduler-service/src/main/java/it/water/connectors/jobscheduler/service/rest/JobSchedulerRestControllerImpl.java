@@ -23,9 +23,8 @@ public class JobSchedulerRestControllerImpl  implements JobSchedulerRestApi {
     @Inject
     @Setter
     private JobSchedulerApi jobSchedulerApi;
-    //All CRUD methods are already exposed by JobSchedulerRestApi interface with JAXRS Annotatiosn
-    //if you need to check which methods are exposed please go to it.water.connectors.jobscheduler.api.rest.JobScheduler
-
-    //ATTENTION: use always JobSchedulerApi in order to ensure the user is requesting operations has the right privileges to do it
+    // Placeholder controller kept only for API compatibility.
+    // No concrete JAX-RS methods are exposed at the moment.
+    // If real REST endpoints are added, use JobSchedulerApi to keep permission checks in place.
 
 }

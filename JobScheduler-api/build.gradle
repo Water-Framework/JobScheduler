@@ -16,6 +16,13 @@ dependencies {
 	implementation group: "it.water.service.rest", name: "Rest-security", version: project.waterVersion
 	// https://mvnrepository.com/artifact/io.swagger/swagger-jaxrs
     implementation group: 'io.swagger', name: 'swagger-jaxrs', version: project.swaggerJaxRsVersion
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:' + project.junitJupiterVersion
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:' + project.junitJupiterVersion
+}
+
+test {
+	useJUnitPlatform()
 }
 
 publishing {

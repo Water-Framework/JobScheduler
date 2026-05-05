@@ -6,6 +6,13 @@ dependencies {
 	annotationProcessor('org.atteo.classindex:classindex:' + project.atteoClassIndexVersion)
 	//Water Core dependencies
     implementation group: "it.water.core", name: "Core-api", version: project.waterVersion
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:' + project.junitJupiterVersion
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:' + project.junitJupiterVersion
+}
+
+test {
+	useJUnitPlatform()
 }
 
 publishing {
